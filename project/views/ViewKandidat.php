@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__ . '/KontrakView.php';
+require_once __DIR__ . '/KontrakViewKandidat.php';
 
-class ViewKandidat implements KontrakView {
+class ViewKandidat implements KontrakViewKandidat {
     private string $skinPath;
     private string $formPath;
 

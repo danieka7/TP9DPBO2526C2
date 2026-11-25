@@ -22,11 +22,11 @@ class Lowongan {
         $this->id = $id;
         $this->judul = $judul;
         $this->departemen = $departemen;
-        $this->lokasi = lokasi;
-        $this->tipeKerja = tipeKerja;
-        $this->gaji = gaji;
-        $this->kuota = kuota;
-        $this->status = status;
+        $this->lokasi = $lokasi;
+        $this->tipeKerja = $tipeKerja;
+        $this->gaji = $gaji;
+        $this->kuota = $kuota;
+        $this->status = $status;
     }
 
     public function getId(): ?int {
@@ -72,6 +72,9 @@ class Lowongan {
     }
     public function setKuota(int $kuota): void {
         $this->kuota = $kuota;
+    }
+    public function setStatus(string $status): void {
+        $this->status = $status;
     }
 }
 ?>

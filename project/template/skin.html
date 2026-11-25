@@ -25,6 +25,9 @@
       padding:20px;
       box-shadow: 0 1px 3px rgba(16,24,40,0.04);
     }
+    .nav{display:flex;gap:6px;margin-bottom:14px;}
+    .nav a{padding:7px 12px;border-radius:6px;font-size:13px;text-decoration:none;color:var(--muted);font-weight:600;}
+    .nav a.active{background:var(--accent);color:#fff;}
     h1{margin:0 0 14px 0;font-size:20px;color:#0f172a;}
     table{width:100%;border-collapse:collapse;font-size:14px;}
     thead th{text-align:left;padding:12px 10px;color:var(--muted);font-weight:600;border-bottom:1px solid var(--border);}
@@ -42,6 +45,10 @@
 </head>
 <body>
   <div class="container">
+    <nav class="nav">
+      <a href="index.php" class="active">Kandidat</a>
+      <a href="index.php?modul=lowongan">Lowongan</a>
+    </nav>
     <div class="card">
       <h1>Daftar Kandidat Karyawan</h1>
 

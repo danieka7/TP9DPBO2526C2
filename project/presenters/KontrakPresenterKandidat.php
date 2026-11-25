@@ -1,5 +1,5 @@
 <?php
-interface KontrakPresenter {
+interface KontrakPresenterKandidat {
     public function tampilkanKandidat(): string;
     public function tampilkanFormKandidat(?int $id = null): string;
     public function tambahKandidat(string $nama, string $posisi, string $domisili, int $skorTes, int $pengalamanTahun): void;
