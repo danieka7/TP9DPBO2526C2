@@ -164,4 +164,5 @@ INSERT INTO `lowongan` (`id`, `judul`, `departemen`, `lokasi`, `tipeKerja`, `gaj
 ```
 
 ## Dokumentasi
+https://github.com/user-attachments/assets/50c0acd3-b9c4-4ab8-adda-0862176e249f
 
