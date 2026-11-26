@@ -1,5 +1,8 @@
 # Tugas Praktikum 9 - Desain Pemrograman Berorientasi Objek
 
+## Janji
+Saya **Dani Eka Saputra** dengan NIM **2501158** mengerjakan Tugas Praktikum 9 pada Mata Kuliah Desain Pemrograman Berorientasi Objek untuk keberkahan-Nya maka saya tidak melakukan kecurangan seperti yang telah dispesifikasikan. Aamiin
+
 Aplikasi web PHP untuk mengelola data **kandidat** dan **lowongan pekerjaan**, dibangun dengan pola **Model–View–Presenter (MVP)** edisi **Strict Passive View**. Kedua modul memiliki fitur CRUD lengkap: tambah, lihat daftar, ubah (form terisi data lama), dan hapus.
 
 ## Desain Program
