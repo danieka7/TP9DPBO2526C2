@@ -29,11 +29,14 @@
   </style>
 </head>
 <body>
+  <!-- Template form tambah/ubah kandidat. Token kurung kurawal diisi oleh ViewKandidat::renderForm() -->
   <div class="container">
     <div class="card">
       <h1>{{FORM_TITLE}}</h1>
 
+      <!-- Dikirim ke index.php (modul kandidat) via POST -->
       <form method="post" action="index.php">
+        <!-- action: 'tambah' atau 'ubah'; id kosong saat tambah -->
         <input type="hidden" name="action" value="{{ACTION}}">
         <input type="hidden" name="id" value="{{ID}}">
 

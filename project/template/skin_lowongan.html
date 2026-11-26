@@ -47,7 +47,9 @@
   </style>
 </head>
 <body>
+  <!-- Template halaman daftar lowongan. Token kurung kurawal diisi oleh ViewLowongan::renderDaftar() -->
   <div class="container">
+    <!-- Navigasi antar modul -->
     <nav class="nav">
       <a href="index.php">Kandidat</a>
       <a href="index.php?modul=lowongan" class="active">Lowongan</a>
@@ -71,11 +73,13 @@
             </tr>
           </thead>
           <tbody>
+            <!-- Baris tabel dirakit oleh PresenterLowongan::buildRowHtml() -->
             {{TABLE_ROWS}}
           </tbody>
         </table>
       </div>
 
+      <!-- Total data (dihitung Presenter) dan tombol ke form tambah -->
       <div class="footer-bar">
         <div style="color:var(--muted);font-size:13px">
           Total Lowongan: <strong style="color:#0f172a">{{TOTAL_DATA}}</strong>

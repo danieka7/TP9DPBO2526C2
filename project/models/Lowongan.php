@@ -1,14 +1,18 @@
 <?php
+/**
+ * Entitas Lowongan: satu objek mewakili satu baris tabel `lowongan`.
+ * Atribut private dan diakses lewat getter/setter (enkapsulasi).
+ */
 class Lowongan {
-    private ?int $id;
-    private string $judul;
+    private ?int $id;               // null jika belum disimpan ke database
+    private string $judul;          // nama posisi, misal "Backend Developer"
     private string $departemen;
     private string $lokasi;
-    private string $tipeKerja;
-    private int $gaji;
-    private int $kuota;
-    private string $status;
-    
+    private string $tipeKerja;      // Full-time / Kontrak / Internship
+    private int $gaji;              // gaji per bulan dalam rupiah
+    private int $kuota;             // jumlah orang yang dibutuhkan
+    private string $status;         // Buka / Tutup
+
     public function __construct(
         ?int $id,
         string $judul,
@@ -29,6 +33,7 @@ class Lowongan {
         $this->status = $status;
     }
 
+    // ---------- Getter ----------
     public function getId(): ?int {
         return  $this->id;
     }
@@ -53,8 +58,9 @@ class Lowongan {
     public function getStatus(): string {
         return $this->status;
     }
-    
-    
+
+
+    // ---------- Setter (id tidak punya setter karena dibuat otomatis oleh database) ----------
     public function setJudul(string $judul): void {
         $this->judul = $judul;
     }

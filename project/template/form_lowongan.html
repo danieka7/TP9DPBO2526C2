@@ -29,11 +29,14 @@
   </style>
 </head>
 <body>
+  <!-- Template form tambah/ubah lowongan. Token kurung kurawal diisi oleh ViewLowongan::renderForm() -->
   <div class="container">
     <div class="card">
       <h1>{{FORM_TITLE}}</h1>
 
+      <!-- Dikirim ke index.php?modul=lowongan via POST -->
       <form method="post" action="index.php?modul=lowongan">
+        <!-- action: 'tambah' atau 'ubah'; id kosong saat tambah -->
         <input type="hidden" name="action" value="{{ACTION}}">
         <input type="hidden" name="id" value="{{ID}}">
 
@@ -54,6 +57,7 @@
 
         <div>
           <label for="tipeKerja">Tipe Kerja</label>
+          <!-- Daftar option dirakit oleh PresenterLowongan::buildOptionsHtml() -->
           <select id="tipeKerja" name="tipeKerja">{{TIPE_KERJA_OPTIONS}}</select>
         </div>
 

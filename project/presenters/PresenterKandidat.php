@@ -3,7 +3,13 @@ require_once __DIR__ . '/KontrakPresenterKandidat.php';
 require_once __DIR__ . '/../models/KontrakModelKandidat.php';
 require_once __DIR__ . '/../views/KontrakViewKandidat.php';
 
+/**
+ * Presenter Kandidat: penghubung Model dan View.
+ * Semua logika tampilan (loop, hitung total, format angka, escape HTML)
+ * dikerjakan di sini, sehingga View cukup menempelkan string ke template.
+ */
 class PresenterKandidat implements KontrakPresenterKandidat {
+    // Tipe properti memakai interface agar tidak terikat ke kelas konkret
     private KontrakModelKandidat $model;
     private KontrakViewKandidat $view;
 
@@ -18,6 +24,7 @@ class PresenterKandidat implements KontrakPresenterKandidat {
      * Panggil dari dalam tampilkanKandidat() saat melakukan foreach.
      */
     private function buildRowHtml(int $no, Kandidat $kandidat): string {
+        // Teks di-escape dengan htmlspecialchars untuk mencegah XSS
         $id = (int)$kandidat->getId();
         $nama = htmlspecialchars($kandidat->getNama());
         $posisi = htmlspecialchars($kandidat->getPosisi());
@@ -25,6 +32,7 @@ class PresenterKandidat implements KontrakPresenterKandidat {
         $skorTes = number_format($kandidat->getSkorTes()) . ' / 100';
         $pengalaman = number_format($kandidat->getPengalamanTahun()) . ' Tahun';
 
+        // $no = nomor urut tampilan, $id = id asli untuk tombol Edit/Hapus
         return "<tr>
             <td class='col-id'>{$no}</td>
             <td><strong>{$nama}</strong></td>
@@ -68,6 +76,7 @@ class PresenterKandidat implements KontrakPresenterKandidat {
         if ($id !== null) {
             $kandidat = $this->model->getKandidatById($id);
             if ($kandidat !== null) {
+                // Objek diubah jadi array biasa karena View tidak boleh mengenal entitas Kandidat
                 $formData = [
                     'id' => $kandidat->getId(),
                     'nama' => $kandidat->getNama(),
@@ -80,12 +89,14 @@ class PresenterKandidat implements KontrakPresenterKandidat {
             }
         }
 
+        // Form kosong untuk tambah (juga dipakai jika id tidak ditemukan)
         return $this->view->renderForm("Tambah Kandidat Baru", "tambah", []);
     }
 
     public function tambahKandidat(string $nama, string $posisi, string $domisili, int $skorTes, int $pengalamanTahun): void {
         // TODO: Panggil $this->model->addKandidat(...) lalu redirect ke index.php
         $this->model->addKandidat($nama, $posisi, $domisili, $skorTes, $pengalamanTahun);
+        // Redirect setelah POST supaya refresh halaman tidak mengirim ulang form
         header("Location: index.php");
         exit();
     }
