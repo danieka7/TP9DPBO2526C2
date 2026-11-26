@@ -7,30 +7,35 @@ Aplikasi web PHP untuk mengelola data **kandidat** dan **lowongan pekerjaan**, d
 ### Struktur Folder
 
 ```
-project/
-├── index.php                      # titik masuk: routing modul, screen, dan action POST
-├── mvp_db.sql                     # skema + data awal database mvp_kandidat_db
-├── models/
-│   ├── DB.php                     # kelas dasar koneksi PDO + executeQuery()
-│   ├── Kandidat.php               # entity Kandidat
-│   ├── Lowongan.php               # entity Lowongan
-│   ├── KontrakModelKandidat.php   # interface Model Kandidat
-│   ├── KontrakModelLowongan.php   # interface Model Lowongan
-│   ├── TabelKandidat.php          # implementasi Model Kandidat (query tabel kandidat)
-│   └── TabelLowongan.php          # implementasi Model Lowongan (query tabel lowongan)
-├── presenters/
-│   ├── KontrakPresenterKandidat.php
-│   ├── KontrakPresenterLowongan.php
-│   ├── PresenterKandidat.php
-│   └── PresenterLowongan.php
-├── views/
-│   ├── KontrakViewKandidat.php
-│   ├── KontrakViewLowongan.php
-│   ├── ViewKandidat.php
-│   └── ViewLowongan.php
-└── template/
-    ├── skin.html / form.html                   # template modul Kandidat
-    └── skin_lowongan.html / form_lowongan.html # template modul Lowongan
+TP9DPBO2526C2/
+├── README.md
+├── database/
+│   └── mvp_db.sql                     # skema + data awal database mvp_kandidat_db
+├── dokumentasi/
+│   └── crud.mp4                       # rekaman demo CRUD
+└── project/
+    ├── index.php                      # titik masuk: routing modul, screen, dan action POST
+    ├── models/
+    │   ├── DB.php                     # kelas dasar koneksi PDO + executeQuery()
+    │   ├── Kandidat.php               # entity Kandidat
+    │   ├── Lowongan.php               # entity Lowongan
+    │   ├── KontrakModelKandidat.php   # interface Model Kandidat
+    │   ├── KontrakModelLowongan.php   # interface Model Lowongan
+    │   ├── TabelKandidat.php          # implementasi Model Kandidat (query tabel kandidat)
+    │   └── TabelLowongan.php          # implementasi Model Lowongan (query tabel lowongan)
+    ├── presenters/
+    │   ├── KontrakPresenterKandidat.php
+    │   ├── KontrakPresenterLowongan.php
+    │   ├── PresenterKandidat.php
+    │   └── PresenterLowongan.php
+    ├── views/
+    │   ├── KontrakViewKandidat.php
+    │   ├── KontrakViewLowongan.php
+    │   ├── ViewKandidat.php
+    │   └── ViewLowongan.php
+    └── template/
+        ├── skin.html / form.html                   # template modul Kandidat
+        └── skin_lowongan.html / form_lowongan.html # template modul Lowongan
 ```
 
 ### Database
